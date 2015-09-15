@@ -44,7 +44,6 @@ void loop()
     digitalWrite(ledPin, LOW);
   }
   state = 0;
-  Serial.println(analogRead(buttonPin));
   delay(2);
 } 
 
