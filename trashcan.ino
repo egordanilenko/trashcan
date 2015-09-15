@@ -1,17 +1,14 @@
-/* Sweep
- by BARRAGAN <http://barraganstudio.com> 
- This example code is in the public domain.
-
- modified 8 Nov 2013
- by Scott Fitzgerald
- http://www.arduino.cc/en/Tutorial/Sweep
-*/ 
-
 #include <Servo.h> 
+/*
+ * Based at Sweep example
+ * 
+ * This 'app' use servo for open trashcan,
+ * sensor of opened door is reed switch (as button)
+ * 
+ * In closed state servo detached - for minimum noise and power save
+ */
  
-Servo myservo;  // create servo object to control a servo 
-                // twelve servo objects can be created on most boards
- 
+Servo myservo;  
 int closed = 0;
 int opened = 140;
 int state = 0;
@@ -20,7 +17,7 @@ const int ledPin =  13;
 const int servoPin = 9;
 void setup() 
 { 
-  myservo.attach(servoPin);  // attaches the servo on pin 9 to the servo object
+  myservo.attach(servoPin);
   digitalWrite(ledPin, HIGH);
   pinMode(ledPin, OUTPUT);
   myservo.write(closed);
